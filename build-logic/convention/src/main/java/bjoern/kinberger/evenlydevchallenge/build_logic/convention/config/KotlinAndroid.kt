@@ -4,6 +4,8 @@ import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 internal fun Project.configureKotlinAndroid(
@@ -23,6 +25,10 @@ internal fun Project.configureKotlinAndroid(
 
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
+
+        tasks.withType<Test> {
+            useJUnitPlatform()
         }
     }
 }

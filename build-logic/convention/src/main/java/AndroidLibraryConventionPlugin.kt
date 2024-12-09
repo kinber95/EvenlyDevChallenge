@@ -34,8 +34,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 implementation(libs.findLibrary("kotlinx-coroutines-core").get())
                 implementation(libs.findLibrary("kotlinx-serialization-json").get())
                 implementation(libs.findLibrary("arrow-core").get())
-
+                implementation(libs.findBundle("room").get())
+                "ksp"(libs.findLibrary("room-compiler").get())
                 testImplementation(kotlin("test"))
+                testImplementation(libs.findLibrary("androidx-junit").get())
+                testImplementation(libs.findLibrary("jupiter").get())
+                testImplementation(libs.findLibrary("mockk").get())
+                testImplementation(libs.findLibrary("kotlinx-coroutines-test").get())
             }
         }
     }

@@ -1,4 +1,4 @@
-package bjoern.kinberger.evenlydevchallenge.feature.poi_browser
+package bjoern.kinberger.evenlydevchallenge.core.database
 
 import org.junit.Test
 

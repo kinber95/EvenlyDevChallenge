@@ -31,13 +31,17 @@ internal class POIBrowserViewModel(
     private val _poiBrowserUiState = MutableStateFlow<POIBrowserUiState>(POIBrowserUiState.Loading)
     val poiBrowserUiState: StateFlow<POIBrowserUiState> = _poiBrowserUiState
         .onStart {
-            nearbyPlacesRepository.findNearbyPlaces(
+            val nearbyPlaces = nearbyPlacesRepository.findNearbyPlaces(
                 latitude = 52.500342,
                 longitude = 13.425170
-            ).fold(
-                ifLeft = { _poiBrowserUiState.update { _ -> POIBrowserUiState.Error } },
-                ifRight = { _poiBrowserUiState.update { _ -> POIBrowserUiState.PointOfInterest(it) } }
             )
+            _poiBrowserUiState.update { _ ->
+                if (nearbyPlaces.isEmpty()) {
+                    POIBrowserUiState.Error
+                } else {
+                    POIBrowserUiState.PointOfInterest(nearbyPlaces)
+                }
+            }
         }
         .stateIn(
             scope = viewModelScope,

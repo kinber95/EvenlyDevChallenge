@@ -20,6 +20,9 @@ appcompat = "1.7.0"
 material = "1.12.0"
 androidxNavigationCompose = "2.8.4"
 arrow = "1.2.4"
+room = "2.6.1"
+mockk = "1.13.13"
+jupiter = "5.9.1"
 
 [libraries]
 
@@ -41,6 +44,12 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigationCompose"}
 # End of it
 
+# Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+# End of it
+
 # Arrow
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 # End of it
@@ -48,6 +57,8 @@ arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jupiter" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 # End of it
 
@@ -69,6 +80,7 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 
 # Kotlin
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerializationJson" }
 # End of it
 
@@ -92,6 +104,10 @@ ktor = [
     "ktor-client-okhttp",
     "ktor-client-serialization",
     "ktor-client-content-negotiation"
+]
+room = [
+    "room-ktx",
+    "room-runtime"
 ]
 
 [plugins]

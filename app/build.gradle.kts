@@ -32,6 +32,7 @@ android {
 dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:navigation"))
+    implementation(project(":core:database"))
     implementation(project(":data:nearby-places"))
     implementation(project(":feature:poi-browser"))
 }

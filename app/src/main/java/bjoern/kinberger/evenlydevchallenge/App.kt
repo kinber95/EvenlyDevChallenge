@@ -1,6 +1,7 @@
 package bjoern.kinberger.evenlydevchallenge
 
 import android.app.Application
+import bjoern.kinberger.evenlydevchallenge.core.database.di.DatabaseModule
 import bjoern.kinberger.evenlydevchallenge.core.network.di.NetworkModule
 import bjoern.kinberger.evenlydevchallenge.data.nearby_places.di.NearbyPlacesDataModule
 import bjoern.kinberger.evenlydevchallenge.feature.poi_browser.di.POIBrowserModule
@@ -18,7 +19,8 @@ class App: Application() {
                 listOf(
                     NetworkModule().module,
                     NearbyPlacesDataModule().module,
-                    POIBrowserModule().module
+                    POIBrowserModule().module,
+                    DatabaseModule().module
                 )
             )
         }
