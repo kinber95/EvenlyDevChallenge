@@ -33,6 +33,10 @@ gradlePlugin {
             id = "bjoern.kinberger.evenlydevchallenge.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("androidLibraryCompose") {
+            id = "bjoern.kinberger.evenlydevchallenge.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
         register("koin") {
             id = "bjoern.kinberger.evenlydevchallenge.koin"
             implementationClass = "KoinConventionPlugin"

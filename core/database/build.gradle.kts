@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.evenly.dev.android.library)
-    alias(libs.plugins.evenly.dev.koin)
 }
 
 android {
@@ -8,4 +7,6 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.room)
+    ksp(libs.room.compiler)
 }

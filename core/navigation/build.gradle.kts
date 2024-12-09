@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.evenly.dev.android.library)
-    alias(libs.plugins.evenly.dev.koin)
 }
 
 android {

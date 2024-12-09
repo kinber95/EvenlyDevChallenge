@@ -123,4 +123,5 @@ evenly-dev-android-application = { id = "bjoern.kinberger.evenlydevchallenge.and
 evenly-dev-android-library = { id = "bjoern.kinberger.evenlydevchallenge.android.library", version = "unspecified" }
 evenly-dev-ktor = { id = "bjoern.kinberger.evenlydevchallenge.ktor", version = "unspecified" }
 evenly-dev-koin = { id = "bjoern.kinberger.evenlydevchallenge.koin", version = "unspecified" }
+evenly-dev-android-library-compose = { id = "bjoern.kinberger.evenlydevchallenge.android.library.compose", version = "unspecified" }
 # End of it
