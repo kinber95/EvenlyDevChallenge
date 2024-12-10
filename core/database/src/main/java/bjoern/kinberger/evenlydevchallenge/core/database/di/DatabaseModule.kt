@@ -24,7 +24,7 @@ class DatabaseModule {
         DATABASE_NAME
     ).build()
 
-    @Factory
+    @Single
     fun nearbyPlaceDao(
         database: EvenlyDatabase
     ): NearbyPlaceDao = database.nearbyPlaceDao()

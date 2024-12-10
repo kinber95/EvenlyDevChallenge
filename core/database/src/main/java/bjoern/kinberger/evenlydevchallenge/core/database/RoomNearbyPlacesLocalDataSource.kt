@@ -8,6 +8,9 @@ import org.koin.core.annotation.Single
 class RoomNearbyPlacesLocalDataSource(
     private val nearbyPlaceDao: NearbyPlaceDao
 ) : NearbyPlacesLocalDataSource {
-    override suspend fun getNearbyPlaces(): List<NearbyPlaceEntity> = nearbyPlaceDao.getNearbyPlaces()
-    override suspend fun insertNearbyPlaces(nearbyPlaces: List<NearbyPlaceEntity>)  = nearbyPlaceDao.insertNearbyPlaces(nearbyPlaces)
+    override suspend fun getNearbyPlaces(): List<NearbyPlaceEntity> =
+        nearbyPlaceDao.getNearbyPlaces()
+
+    override suspend fun insertNearbyPlaces(nearbyPlaces: List<NearbyPlaceEntity>) =
+        nearbyPlaceDao.insertNearbyPlacesAndDeleteOld(nearbyPlaceEntity = nearbyPlaces)
 }

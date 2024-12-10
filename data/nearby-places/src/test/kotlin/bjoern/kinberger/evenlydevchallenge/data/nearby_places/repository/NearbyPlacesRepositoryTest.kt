@@ -1,6 +1,7 @@
 package bjoern.kinberger.evenlydevchallenge.data.nearby_places.repository
 
 import android.util.Log
+import arrow.core.getOrElse
 import bjoern.kinberger.evenlydevchallenge.core.database.NearbyPlacesLocalDataSource
 import bjoern.kinberger.evenlydevchallenge.core.network.NearbyPlacesRemoteDataSource
 import bjoern.kinberger.evenlydevchallenge.data.nearby_places.fake.fakeNearbyPlaceEntity
@@ -47,7 +48,7 @@ class NearbyPlacesRepositoryTest {
             }
 
             assertEquals(
-                result,
+                result.getOrElse {  },
                 nearbyPlacesLocalDataSourceMock.getNearbyPlaces().map { it.toNearbyPlace() }
             )
         }
@@ -79,7 +80,7 @@ class NearbyPlacesRepositoryTest {
             }
 
             assertEquals(
-                result,
+                result.getOrElse {  },
                 nearbyPlacesLocalDataSourceMock.getNearbyPlaces().map { it.toNearbyPlace() }
             )
         }

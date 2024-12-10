@@ -2,6 +2,7 @@
 
 package bjoern.kinberger.evenlydevchallenge.feature.poi_browser.ui
 
+import arrow.core.Either
 import bjoern.kinberger.evenlydevchallenge.data.nearby_places.repository.NearbyPlacesRepository
 import bjoern.kinberger.evenlydevchallenge.feature.poi_browser.POIBrowserUiState
 import bjoern.kinberger.evenlydevchallenge.feature.poi_browser.POIBrowserViewModel
@@ -22,7 +23,7 @@ import org.junit.jupiter.api.Test
 class POIBrowserViewModelTest {
 
     private val nearbyPlacesRepositoryMock: NearbyPlacesRepository = mockk {
-        coEvery { findNearbyPlaces(any(), any()) } returns listOf(fakePointsOfInterests)
+        coEvery { findNearbyPlaces(any(), any()) } returns Either.Right(listOf(fakePointsOfInterests))
     }
 
     @AfterEach
